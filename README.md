@@ -79,7 +79,7 @@ docker-compose exec --user=laradock workspace bash
 composer install
 npm install
 php artisan key:generate
-php artisan migrate
+php artisan migrate --seed
 ```
 
 **Build app**
