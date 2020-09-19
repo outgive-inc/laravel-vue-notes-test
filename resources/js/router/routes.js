@@ -65,6 +65,26 @@ export default [{
       }
     ]
   },
+  {
+    path: '/notes',
+    name: 'notes',
+    component: page('notes/index.vue')
+  },
+  {
+    path: '/notes/view/:id',
+    name: 'notes.view',
+    component: page('notes/view.vue')
+  },
+  {
+    path: '/notes/add',
+    name: 'notes.add',
+    component: page('notes/add.vue')
+  },
+  {
+    path: '/notes/edit/:id',
+    name: 'notes.edit',
+    component: page('notes/edit.vue')
+  },
 
   {
     path: '*',
