@@ -20,6 +20,12 @@ Route::group(['middleware' => 'auth:api'], function () {
         return $request->user();
     });
 
+    Route::get('notes', 'NotesController@index');
+    Route::post('notes/add', 'NotesController@add');
+    Route::get('notes/edit/{id}', 'NotesController@edit');
+    Route::post('notes/update/{id}', 'NotesController@update');
+    Route::delete('notes/delete/{id}', 'NotesController@delete');
+
     Route::patch('settings/profile', 'Settings\ProfileController@update');
     Route::patch('settings/password', 'Settings\PasswordController@update');
 });

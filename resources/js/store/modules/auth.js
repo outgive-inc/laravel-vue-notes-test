@@ -49,6 +49,16 @@ export const actions = {
     commit(types.SAVE_TOKEN, payload)
   },
 
+  async fetchNotes ({ commit }) {
+    try {
+      const { data } = await axios.get('/api/notes')
+
+      commit(types.FETCH_NOTES_SUCCESS, { notes: data })
+    } catch (e) {
+      commit(types.FETCH_NOTES_FAILURE)
+    }
+  },
+
   async fetchUser ({ commit }) {
     try {
       const { data } = await axios.get('/api/user')
