@@ -14,3 +14,7 @@
 Route::get('{path}', function () {
     return view('index');
 })->where('path', '(.*)');
+
+Route::resource('/notes', 'NotesController', [
+    'except' => ['edit', 'show', 'store']
+  ]);

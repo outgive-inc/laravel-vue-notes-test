@@ -89,6 +89,9 @@ export default {
       // Fetch the user.
       await this.$store.dispatch('auth/fetchUser')
 
+      //fetahc the notes
+      await this.$store.dispatch('auth/fetchNotes')
+
       // Redirect home.
       this.$router.push({ name: 'home' })
     }
